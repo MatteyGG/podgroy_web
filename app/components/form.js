@@ -1,12 +1,20 @@
-import image from './2.jpg';
+"use client"
+
+//import image from './2.jpg';
 import Image from 'next/image'
 
+var image = '/1.jpg'
 export default function form() {
+    const handlerSelect = () => {
+        console.log('/' + document.getElementById("select_id").value + '.jpg')
+        let image = document.querySelector('#img')
+        image.src = '/' + document.getElementById("select_id").value + '.jpg'
+    } 
     return (<div className="flex items-center justify-center p-12">
         <div className="mx-auto w-full">
             <form action="https://formbold.com/s/FORM_ID" method="POST" className="grid gap-5 grid-cols-2">
                 <div className='container md:block hidden'>
-                    <Image src={image} style={{ objectFit: "contain" }} className=' rounded-lg md:block hidden' placeholder="blur" />
+                    <Image style={{objectFit: "contain"}} width={600} height={500} src={image} id='img' loading ='eager' className=' rounded-lg md:block hidden'/>
                 </div>
                 <div>
                     <div className="-mx-3 flex flex-wrap">
@@ -80,8 +88,8 @@ export default function form() {
                         >
                             Какой номер?
                         </label>
-                        <select defaultValue={'DEAFAULT'} id="select_id" id="room" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option value="DEFAULT">Выберите комнату</option>
+                        <select defaultValue={'DEAFAULT'} onClick={handlerSelect} id="select_id" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="1">Выберите комнату</option>
                             <option value="2">Красная комната</option>
                             <option value="3">Canada</option>
                             <option value="FR">France</option>
