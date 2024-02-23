@@ -1,12 +1,12 @@
-import image from './1.jpg';
+import image from './2.jpg';
 import Image from 'next/image'
 
 export default function form() {
     return (<div className="flex items-center justify-center p-12">
         <div className="mx-auto w-full">
             <form action="https://formbold.com/s/FORM_ID" method="POST" className="grid gap-5 grid-cols-2">
-                <div className='container '>
-                <Image src={image} fill={true} className=' rounded-lg' placeholder="blur"/>
+                <div className='container md:block hidden'>
+                    <Image src={image} style={{ objectFit: "contain" }} className=' rounded-lg md:block hidden' placeholder="blur" />
                 </div>
                 <div>
                     <div className="-mx-3 flex flex-wrap">
@@ -45,6 +45,34 @@ export default function form() {
                             </div>
                         </div>
                     </div>
+                    <label
+                        htmlFor="fName"
+                        className="mb-3 block text-base font-medium text-[#07074D]"
+                    >
+                        Почта
+                    </label>
+                    <input
+                        type="text"
+                        name="fName"
+                        id="fName"
+                        placeholder="podgoroy.pz@gmail.com"
+                        className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                    />
+
+                    <label
+                        htmlFor="fName"
+                        className="mb-3 block text-base font-medium text-[#07074D]"
+                    >
+                        Номер телефона
+                    </label>
+                    <input
+                        type="number"
+                        name="fName"
+                        id="fName"
+                        placeholder="+7 909 997 55 97"
+                        className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                    />
+
                     <div className="mb-5">
                         <label
                             htmlFor="guest"
@@ -52,10 +80,10 @@ export default function form() {
                         >
                             Какой номер?
                         </label>
-                        <select defaultValue={'DEAFAULT'} id="room" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select defaultValue={'DEAFAULT'} id="select_id" id="room" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option value="DEFAULT">Выберите комнату</option>
-                            <option value="main">Красная комната</option>
-                            <option value="CA">Canada</option>
+                            <option value="2">Красная комната</option>
+                            <option value="3">Canada</option>
                             <option value="FR">France</option>
                             <option value="DE">Germany</option>
                         </select>
@@ -114,10 +142,11 @@ export default function form() {
                     >
                         Submit
                     </button>
+                    <p className='font-semibold text-gray-400'>Aдминистрация оставляет за собой право отказать в размещении с животными.</p>
                 </div >
             </form>
         </div>
     </div>
-    
+
     );
 }
