@@ -1,4 +1,4 @@
-export default function about() {
+export default function About() {
     return (
         <div className="justify-center mx-8 space-y-5">
             <h1 className="text-lg  m-auto justify-left mt-10">Как с нами связаться?</h1>
