@@ -14,7 +14,7 @@ export default function form() {
         <div className="mx-auto w-full">
             <form action="https://formbold.com/s/FORM_ID" method="POST" className="grid gap-5 grid-cols-2">
                 <div className='container md:block hidden'>
-                    <Image style={{objectFit: "contain"}} width={600} height={500} src={image} id='img' loading ='eager' className=' rounded-lg md:block hidden'/>
+                    <Image style={{objectFit: "contain"}} width={600} height={500} src={image} id='img' loading ='eager' className=' rounded-lg md:block hidden' alt={"image"}/>
                 </div>
                 <div>
                     <div className="-mx-3 flex flex-wrap">
@@ -88,7 +88,7 @@ export default function form() {
                         >
                             Какой номер?
                         </label>
-                        <select defaultValue={'DEAFAULT'} onClick={handlerSelect} id="select_id" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select defaultValue={'DEAFAULT'} onClick={handlerSelect} id="select_id" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-2.5">
                             <option value="1">Выберите комнату</option>
                             <option value="2">Красная комната</option>
                             <option value="3">Canada</option>

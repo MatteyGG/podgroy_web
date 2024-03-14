@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function NavBar(){
   return (
-    <div className=" content-center">
+    <div className="content-center">
       <div className="header flex w-[90%] mx-8 justify-between mt-5">
         <Link href="/" className="lg:text-3xl md:block hidden">Подгорой</Link>
         <div className="menu">
@@ -20,6 +20,11 @@ function NavBar(){
               </li>
               <li>
                 <Link href="/contacts">Контакты</Link>
+              </li>
+              <li>
+                <div>
+                  <Link href="/registration" className="bg-primary text-white px-3 py-1 rounded-md">Регистрация</Link>
+                </div>
               </li>
             </ul>
           </nav>
