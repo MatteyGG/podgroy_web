@@ -16,10 +16,6 @@ export default function RegistrationPage() {
         Регистрация
       </h1>
       <form onSubmit={handleFormSubmit}>
-        <label className="grid grid-cols-1 ">
-          <span>Имя</span>
-          <input type="text" placeholder="Иван" name="name" />
-        </label>
         <label>
           <span>Почта</span>
           <input type="email" name="email" placeholder="podgoroy@example.com" value={email} onChange={ev => setEmail(ev.target.value)}/>
