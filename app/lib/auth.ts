@@ -46,14 +46,19 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        return { id: existingUser.id + "", email: existingUser.email };
+        // Include the 'username' property in the returned object
+        return {
+          id: existingUser.id + "",
+          email: existingUser.email,
+          username: existingUser.username,
+        };
       },
     }),
     // ...add more providers here
     YandexProvider({
       clientId: process.env.YANDEX_CLIENT_ID,
-      clientSecret: process.env.YANDEX_CLIENT_SECRET
-    })
+      clientSecret: process.env.YANDEX_CLIENT_SECRET,
+    }),
   ],
   callbacks: {
     async jwt({ token, user }) {
