@@ -1,6 +1,8 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import YandexProvider from "next-auth/providers/yandex";
+
 import prisma from "./db";
 import { compare } from "bcrypt";
 
@@ -47,20 +49,24 @@ export const authOptions: NextAuthOptions = {
         return { id: existingUser.id + "", email: existingUser.email };
       },
     }),
+    // ...add more providers here
+    YandexProvider({
+      clientId: process.env.YANDEX_CLIENT_ID,
+      clientSecret: process.env.YANDEX_CLIENT_SECRET
+    })
   ],
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        return { ...token,
-          username: user.username 
-        };
+        return { ...token, username: user.username };
       }
       return token;
     },
     async session({ session, token }) {
-      return { ...session, 
-        user: { ...session.user, 
-          username: token.username } };
+      return {
+        ...session,
+        user: { ...session.user, username: token.username },
+      };
     },
   },
 };

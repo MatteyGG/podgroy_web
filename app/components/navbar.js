@@ -11,18 +11,18 @@ async function NavBar() {
   return (
     <>
       <nav>
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl pt-4">
           <Link href="/" className="lg:text-3xl">
-            <span className="self-center text-2xl font-semibold whitespace-nowrap ">
+            <span className="self-center text-3xl font-semibold whitespace-nowrap ">
               Подгорой
             </span>
           </Link>
           <div className="flex items-center space-x-6 rtl:space-x-reverse">
             <Link
-              href="tel:5541251234"
+              href="tel:+79099755597"
               className="text-sm  text-gray-500  hover:underline md:block hidden"
             >
-              +7 (495) 123-45-67
+              +7 (909) 997-55-97
             </Link>
             {session?.user ? (
               <>
@@ -55,9 +55,9 @@ async function NavBar() {
         </div>
       </nav>
       <nav>
-        <div className="max-w-screen-xl px-4 py-3 mx-auto">
+        <div className="max-w-screen-xl py-3 mx-auto">
           <div className="flex items-center">
-            <ul className="flex flex-row font-medium lg:text-xl mt-0 space-x-8">
+            <ul className="flex flex-row font-medium text-sm lg:text-xl mt-0 space-x-8">
               <li>
                 <Link href="/">Домой</Link>
               </li>
