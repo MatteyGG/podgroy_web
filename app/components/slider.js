@@ -13,7 +13,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-export default function Page() {
+export default function Slider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <section>

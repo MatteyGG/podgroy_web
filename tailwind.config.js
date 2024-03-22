@@ -9,9 +9,11 @@ module.exports = {
     extend: {
       colors: {
         primary : '#6A64F1',
-        primary_dark : '#1c334f'
+        primary_dark : '#1c334f',
+        primary_light : '#8F94FB',
       },
     },
   },
+  darkMode: 'media',
   plugins: [],
 };

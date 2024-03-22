@@ -4,7 +4,7 @@
 import Image from 'next/image'
 
 var image = '/1.jpg'
-export default function form() {
+export default function Form() {
     const handlerSelect = () => {
         console.log('/' + document.getElementById("select_id").value + '.jpg')
         let image = document.querySelector('#img')

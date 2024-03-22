@@ -3,7 +3,7 @@ export default function About() {
         <div className="justify-center mx-8 space-y-5">
             <h1 className="text-lg  m-auto justify-left mt-10">Как с нами связаться?</h1>
             <div className="grid gap-5 lg:md:grid-cols-2 sm:grid-cols-1">
-                <dl className="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
+                <dl className="max-w-md text-gray-900 divide-y divide-gray-200">
                     <div className="flex flex-col pb-3">
                         <dt className="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Почта</dt>
                         <dd className="text-lg font-semibold">podgoroy.pz@gmail.com</dd>

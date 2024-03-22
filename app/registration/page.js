@@ -1,20 +1,33 @@
 "use client";
-import { useState } from "react";
+import { useState } from "react"
+import { useRouter } from "next/navigation"
+import HeaderPage from "../components/headerComp";
 
 export default function RegistrationPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  function handleFormSubmit(event) {
+  const router = useRouter();
+  const handleFormSubmit = async function (event) {
     event.preventDefault();
     console.log({ email, password });
-    fetch('/api/registration', {method: 'POST', body: JSON.stringify({email, password})})
-    headers: {'Content-Type', 'application/json'}
+    const response = await fetch("/api/registration", {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+    });
+    headers: {
+      "Content-Type", "application/json";
+    }
+    if (response.ok) {
+      router.push("/login");
+    } else {
+      console.error("Registration failed");
+    }
   }
+
+
   return (
     <section className="mt-8 lg:mx-40">
-      <h1 className="text-center text-primary_dark text-2xl md:text-4xl">
-        Регистрация
-      </h1>
+      <HeaderPage text="Регистрация" />
       <form onSubmit={handleFormSubmit}>
         <label>
           <span>Почта</span>

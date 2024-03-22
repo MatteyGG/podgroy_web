@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={inter.className}>
-        <main className="max-w-8xl mx-auto p-3">
+        <main className="w-[90%] mx-auto">
           <Nav />
           {children}
           <Footer />
