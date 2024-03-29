@@ -7,16 +7,7 @@ import { YandexProfile } from "next-auth/providers/yandex";
 import prisma from "./db";
 import { compare } from "bcrypt";
 
-type User = {
-  id: string;
-  email: string;
-  password: string;
-  created_at: Date;
-  username: string;
-  image: string;
-  phone: string;
-  role: string;
-};
+
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   session: { strategy: "jwt" },
@@ -50,7 +41,7 @@ export const authOptions: NextAuthOptions = {
         );
 
         if (passwordCheck) {
-          return {id: user.id.toString(), username: user.username, image: user.image, email: user.email, phone: user.phone, role: user.role};
+          return {id: user.id.toString(), username: user.username, image: user.image.toString(), email: user.email, phone: user.phone, role: user.role.toString()};
         }
       },
     }),
