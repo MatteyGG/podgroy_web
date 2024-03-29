@@ -14,23 +14,26 @@ export default async function Booking() {
           <Form />
         </div>
       ) : (
-        <section className="mt-8 lg:mx-40 content-center">
-          <h1 className="text-center text-primary_dark text-2xl md:text-4xl">
+        <section className="mt-8 lg:mx-40">
+          <div className="text-primary_dark text-2xl grid-cols-1 md:text-4xl grid md:flex justify-center">
+          <button>
             <Link
               href="/login"
-              className="bg-primary text-white px-3 py-1 rounded-md"
+              className="bg-primary text-white text-center px-3 py-1 rounded-md"
             >
-              Войдите
+              Войдите
             </Link>
-            или
-            <Link
+            </button>
+            <p className="text-xl text-center text-gray-500 md:text-4xl"> или </p>
+            <button><Link
               href="/registration"
-              className="bg-primary text-white px-3 py-1 rounded-md"
+              className="bg-primary text-white text-center px-3 py-1 rounded-md"
             >
               зарегестрируйтесь
             </Link>
-            , чтобы получить доступ к бронированию
-          </h1>
+            </button>
+          </div>
+            <p className="flex text-xl md:text-4xl justify-center">для доступа к бронированию</p>
         </section>
       )}
     </>

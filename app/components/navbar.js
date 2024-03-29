@@ -11,16 +11,16 @@ async function NavBar() {
   return (
     <>
       <nav>
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl pt-4">
-          <Link href="/" className="lg:text-3xl">
-            <span className="self-center text-3xl font-semibold whitespace-nowrap ">
+        <div className="flex flex-wrap justify-between mx-auto max-w-screen-xl pt-4">
+          <Link href="/">
+            <span className="self-center text-2xl md:text-3xl font-semibold">
               Подгорой
             </span>
           </Link>
-          <div className="flex items-center space-x-6 rtl:space-x-reverse">
+          <div className="flex items-center gap-2 md:gap-3">
             <Link
               href="tel:+79099755597"
-              className="text-sm  text-gray-500  hover:underline md:block hidden"
+              className="text-sm hidden  text-gray-500  hover:underline md:block "
             >
               +7 (909) 997-55-97
             </Link>
@@ -32,7 +32,7 @@ async function NavBar() {
             ) : (
               <>
                 <div className="flex gap-1">
-                  <div>
+                  <div className="hidden md:block">
                     <Link
                       href="/registration"
                       className="text-primary_dark px-3 py-1 rounded-md"
@@ -55,12 +55,9 @@ async function NavBar() {
         </div>
       </nav>
       <nav>
-        <div className="max-w-screen-xl py-3 mx-auto">
+        <div className="max-w-screen-xl py-3">
           <div className="flex items-center">
-            <ul className="flex flex-row font-medium text-sm lg:text-xl mt-0 space-x-8">
-              <li>
-                <Link href="/">Домой</Link>
-              </li>
+            <ul className="flex flex-row font-medium text-sm lg:text-xl gap-3 mt-0">
               <li>
                 <Link href="/news">Новости</Link>
               </li>

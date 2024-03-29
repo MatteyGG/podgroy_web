@@ -21,7 +21,15 @@
     width: 100%;
     height: 100%;
   }
-  .submit_button {
+  .button {
+    background-color: #6a64f1;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .submit {
     background-color: #6a64f1;
     color: white;
     border-radius: 0.5rem;
@@ -32,6 +40,7 @@
 
   input[type="text"],
   input[type="email"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="tel"] {
     @apply border border-primary rounded-md px-3 py-2 mb-3 w-full
   }

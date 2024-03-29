@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "../app/components/navbar";
 import Footer from "../app/components/footer";
+import {AppProvider} from "../app/components/AppContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,14 +20,15 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="shortcut icon" href="../" />
       </head>
-
-      <body className={inter.className}>
-        <main className="w-[90%] mx-auto">
-          <Nav />
-          {children}
-          <Footer />
-        </main>
-      </body>
+        <body className={inter.className}>
+          <main className="w-[90%] mx-auto">
+            <AppProvider>
+              <Nav />
+                {children}
+              <Footer />
+            </AppProvider>
+          </main>
+        </body>
     </html>
   );
 }
