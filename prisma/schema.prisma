@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("POSTGRES_URL")
 }
 
 model Account {
@@ -38,7 +38,7 @@ model User {
   id            String    @id @default(cuid())
   username      String?   @default("")
   email         String?   @unique
-  password      String    @default("default_password_value") @db.Char(60)
+  password      String    @default("default_Ann_password_value") @db.Char(60)
   emailVerified DateTime?
   image         String?  @default("")
   created_at    DateTime @default(now())
