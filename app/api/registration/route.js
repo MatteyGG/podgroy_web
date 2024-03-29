@@ -1,10 +1,10 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client';
 import { hash } from "bcrypt";
 export async function POST(req) {
   const body = await req.json();
   console.log(body);
   const prisma = new PrismaClient();
-  const {email, password} = body
+  const {username, email, password} = body
 
   try {
     const existingUser = await prisma.user.findUnique({
@@ -20,6 +20,7 @@ export async function POST(req) {
     const hashedPassword = await hash(password, 10)
     const newUser = await prisma.user.create({
       data: {
+        username,
         email,
         password: hashedPassword
       },
