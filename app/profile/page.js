@@ -11,13 +11,15 @@ export default function Profile() {
 
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');  
+  const [phone, setPhone] = useState('');
+  const [image, setImage] = useState('');  
 
   useEffect(() => {
     if (status === "authenticated" && session.user) {
       setUsername(session.user.username);
       setEmail(session.user.email);
       setPhone(session.user.phone);
+      setImage(session.user.image);
       console.log(session);
     }
   } , [session, status]);
@@ -52,10 +54,11 @@ export default function Profile() {
       <section className="mx-auto md:w-1/2">
         <HeaderPage text="Профиль" />
         <div className="flex gap-1 mt-6">
-          {session.data?.user?.image ? (
+          {session.user?.image ? (
             <div>
               <Image
-                src={session.data.user.image}
+                className="rounded-sm object-cover w-24 h-24"
+                src={image}
                 alt={username}
                 width={64}
                 height={64}

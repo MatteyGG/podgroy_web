@@ -1,8 +1,7 @@
-import Script from "next/script";
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 
 const TelegramWidget = () => {
-  const telegramWrapperRef = useRef<HTMLDivElement>(null);
+  const telegramWrapperRef = useRef(null);
 
   useEffect(() => {
     const scriptElement = document.createElement('script');
@@ -11,8 +10,9 @@ const TelegramWidget = () => {
     scriptElement.setAttribute('data-width', '100%');
     telegramWrapperRef.current?.appendChild(scriptElement);
 
+    const currentWrapperRef = telegramWrapperRef.current;
     return () => {
-      telegramWrapperRef.current?.removeChild(scriptElement);
+      currentWrapperRef?.removeChild(scriptElement);
     };
   }, []);
 
