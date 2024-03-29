@@ -13,6 +13,7 @@ type User = {
   password: string;
   created_at: Date;
   username: string;
+  image: string;
   phone: string;
   role: string;
 };
@@ -62,7 +63,8 @@ export const authOptions: NextAuthOptions = {
           email: profile.default_email,
           username: profile.display_name,
           phone:  profile.default_phone.number,
-          image: 'https://avatars.yandex.net/get-yapic/' + profile.default_avatar_id
+          image: 'https://avatars.yandex.net/get-yapic/' + profile.default_avatar_id,
+          role: 'user'
         }
 
 
